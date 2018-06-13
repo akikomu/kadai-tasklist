@@ -1,7 +1,10 @@
 <h1>id:<%= @task.id %>詳細ページ</h1>
 
-<P>
-  <%= @task.content %>
+
+<p>ステイタス: <%= @task.status %></p>
+<P>タスク:<%= @task.content %></P>
+
+  
 </P>
 
 <%= link_to 'タスク一覧' , tasks_path %>
