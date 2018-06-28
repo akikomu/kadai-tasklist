@@ -5,7 +5,6 @@ class TasksController < ApplicationController
   def index
      if logged_in?
       @user = current_user
-      @task= current_user.tasks.build
       @tasks = current_user.tasks.order('created_at DESC').page(params[:page])
     end
   end
@@ -56,7 +55,7 @@ end
 
 
 def task_params
-  params.require(:task).permit(:content, :status, :user_id)
+  params.require(:task).permit(:content, :status,)
 end
 
 def correct_user
